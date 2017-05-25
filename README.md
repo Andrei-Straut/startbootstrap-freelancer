@@ -7,6 +7,6 @@ All original assets and functionality are present, only ported to Java.
 [Original project location](https://github.com/BlackrockDigital/startbootstrap-freelancer)
 
 ## Configure email settings
-Navigate to `src/main/resources/com/andreistraut/freelancerwar/sbfw/config.properties`
-Edit the settings
+Navigate to `src/main/resources/com/andreistraut/freelancerwar/sbfw/config.properties`.  
+Edit the settings.  
 Enjoy!
