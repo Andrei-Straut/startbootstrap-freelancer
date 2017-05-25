@@ -42,12 +42,12 @@ public class ContactServlet extends HttpServlet {
 	    Properties contactProperties = new Properties();
 	    contactProperties.load(this.getClass().getResourceAsStream(
 		    "/com/andreistraut/freelancerwar/sbfw/config/config.properties"));
-	    
-	    String host = request.getParameter("host");
 	    String requestName = request.getParameter("name");
 	    String requestPhone = request.getParameter("phone");
 	    String requestEmail = request.getParameter("email");
 	    String requestMessage = request.getParameter("message");
+	    
+	    String host = contactProperties.getProperty("host");
 	    String mailSubject = String.format(contactProperties.getProperty("emailSubject"), requestName);
 	    String mailBody = String.format(contactProperties.getProperty("emailBody"), 
 		    requestName, requestEmail, requestPhone, requestMessage);
