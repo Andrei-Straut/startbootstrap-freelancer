@@ -50,11 +50,12 @@ public class ContactServlet extends HttpServlet {
 	    String mailSubject = String.format(contactProperties.getProperty("emailSubject"), requestName);
 	    String mailBody = String.format(contactProperties.getProperty("emailBody"), 
 		    requestName, requestEmail, requestPhone, requestMessage);
-	    String from = "no-reply@startbootstrapfreelancer.com";
+	    String from = "no-reply@andreistraut.info";
 	    
 	    Properties mailProperties = new Properties();
 	    mailProperties.setProperty("mail.smtp.host", host);
-	    Session session = Session.getDefaultInstance(mailProperties, null);
+	    mailProperties.setProperty("mail.smtp.port", "25");
+	    Session session = Session.getInstance(mailProperties, null);
 
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(from, "NoReply"));
